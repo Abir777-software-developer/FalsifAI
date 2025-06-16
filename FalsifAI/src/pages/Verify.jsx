@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Button, Textarea } from "@chakra-ui/react";
 import { useState } from "react";
 import { Toaster, toaster } from "../components/ui/toaster";
+import logoimg from "../assets/logo.png";
 function Verify() {
   const [input, setinput] = useState("");
   const [res, setres] = useState(null);
@@ -79,6 +80,7 @@ function Verify() {
         <div className="flex justify-between items-center w-full">
           <div className="flex-1">
             <h1 className="text-lg font-bold ">FalsifAI</h1>
+            {/* <img src="logoimg" alt="logo" /> */}
           </div>
           <div className="flex-1 text-center">
             <h1 className="text-lg font-bold">Welcome to FalsifAi!!</h1>
