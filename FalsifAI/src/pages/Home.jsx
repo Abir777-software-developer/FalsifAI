@@ -40,6 +40,7 @@ function Home() {
             fontSize: "60px",
             fontWeight: "bold",
             textDecoration: "underline",
+            color: "black",
           }}
         >
           Welcome to Fake News Detection Portal!!
@@ -51,6 +52,7 @@ function Home() {
             marginTop: "30px",
             marginBottom: "30px",
             textDecoration: "underline",
+            color: "black",
           }}
         >
           Select an option below to get started.
