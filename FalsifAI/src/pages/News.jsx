@@ -11,19 +11,18 @@ function News() {
     const cachearticles = localStorage.getItem("newArticles");
     if (cachearticles) {
       setarticles(JSON.parse(cachearticles));
-    } else {
-      try {
-        const res = await fetch(
-          `https://newsdata.io/api/1/latest?apikey=${api}&language=en`
-        );
-        const data = await res.json();
-        setarticles(data.results || []);
-        localStorage.setItem("newsArticles", JSON.stringify(data.results));
-      } catch (error) {
-        console.log("error fetching messages");
-      } finally {
-        setloading(false);
-      }
+    }
+    try {
+      const res = await fetch(
+        `https://newsdata.io/api/1/latest?apikey=${api}&language=en`
+      );
+      const data = await res.json();
+      setarticles(data.results || []);
+      localStorage.setItem("newArticles", JSON.stringify(data.results));
+    } catch (error) {
+      console.log("error fetching messages");
+    } finally {
+      setloading(false);
     }
   };
   useEffect(() => {
