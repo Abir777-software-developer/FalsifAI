@@ -1,7 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
-@tailwind utilities;
+
+:root {
+  --primary: #8b5cf6;
+  /* Violet 500 */
+  --primary-dark: #4c1d95;
+  /* Violet 900 */
+  --primary-accent: #a78bfa;
+  /* Violet 400 */
+  --bg-main: #0a0118;
+  /* Deep mystic purple */
+  --bg-surface: #12022b;
+  /* Dark purple tint */
+  --text-main: #f5f3ff;
+  /* Violet 50 */
+  --text-muted: #a78bfa;
+  /* Violet 400 */
+  --glass-bg: rgba(10, 1, 24, 0.85);
+  --glass-border: rgba(139, 92, 246, 0.2);
+}
 
 body {
-  font-family: "Inter", sans-serif;
-  background-color: #d6ffb7;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.5;
+  /* Better density */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  /* Slightly smaller base */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.glass-morphism {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+}
+
+.card-dark {
+  background: var(--bg-surface);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.hover-lift {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px -20px rgba(16, 185, 129, 0.1);
+  border-color: var(--primary);
+}
+
+.gradient-dark-hero {
+  background: radial-gradient(circle at top center, #2e1065 0%, #0a0118 100%);
+}
+
+.container-constrained {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.04em;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
 }
